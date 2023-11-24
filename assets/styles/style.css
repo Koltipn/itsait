@@ -255,8 +255,9 @@ header {
   line-height: normal;
 }
 
-.discover__btn {
+.discover__btn a {
   color: #fff;
+  text-decoration: none;
 
   font-family: Inter;
   font-size: 20px;
@@ -433,8 +434,7 @@ header {
   margin-top: 15px;
 }
 
-.about__btn a {
-  text-decoration: none;
+.about__btn {
   color: #fff;
   font-size: 20px;
   font-style: normal;
@@ -449,6 +449,7 @@ header {
   align-items: center;
   width: fit-content;
   margin-top: 20px;
+  cursor: pointer ;
 }
 
 .com__container {
