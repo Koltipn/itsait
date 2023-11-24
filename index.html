@@ -47,7 +47,8 @@
           <p class="first-page__desc">
             Мы откроем вам более <span>10 000 рецептов</span>. Поможем найти самый простой способ приготовления.
           </p>
-          <p class="first-page__btn btn-modal">Перейти к рецептам</p>
+          <a class="first-page__btn" href="#nax">Перейти к рецептам </a> 
+          <!-- <p class="first-page__btn btn-modal">Перейти к рецептам</p> -->
         </div>
         <div class="first-page__img-wrap">
           <img
@@ -140,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="discover__container">
+      <div class="discover__container" id ="nax">
         <div class="discover__header-wrap">
           <div class="">
             <p class="discover__title">Находите, создавайте, делитесь</p>
@@ -320,7 +321,7 @@
               разнообразные обеды.
             </p>
             <div class="about__btn">
-              <p>Читать дальше</p>
+              <a href="#foot"> Связаться с нами </a>
             </div>
           </div>
         </div>
@@ -336,7 +337,7 @@
                     <img src="./assets/img/image san.png" />
                   </div>
                   <div class="com__item-user-info">
-                    <p class="com__item-title">Спагетти Болоньезе</p>
+                    <p class="com__item-title" id = "spag" >Спагетти Болоньезе</p>
                     <p class="com__item-name">Саня Волеболоходилов</p>
                   </div>
                 </div>
@@ -1047,7 +1048,7 @@
                 </div>
               </div>
             </div>
-            <div class="com__items-container">
+            <!-- <div class="com__items-container">
               <div class="com__item">
                 <div class="com__item-user">
                   <div class="com__item-photo">
@@ -1292,7 +1293,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="com__slider-wrap">
@@ -1300,7 +1301,7 @@
             <div class="com__slider-item active"></div>
             <div class="com__slider-item"></div>
             <div class="com__slider-item"></div>
-            <div class="com__slider-item"></div>
+            <!-- <div class="com__slider-item"></div> -->
           </div>
           <div class="com__slider-buttons">
             <div class="com__slider-button prev">
@@ -1345,7 +1346,7 @@
         </p>
         <div class="app__buttons-wrap">
           <a href="#">
-            <img src="./assets/img/apple.svg" alt="" />
+            <img src="./assets/img/apple.png" alt="" />
           </a>
           <a href="#">
             <img src="./assets/img/google.svg" />
@@ -1354,7 +1355,7 @@
       </div>
     </main>
     <footer>
-      <div class="footer__container">
+      <div class="footer__container" id = "foot">
         <img
           src="./assets/img/1c4e9e154ecb19bc8e5aecca6cf35b3e.png"
           alt=""
@@ -1397,19 +1398,19 @@
               <p class="footer__nav-title">Категории</p>
               <ul class="footer__nav-list">
                 <li class="footer__nav-item">
-                  <a href="#">Завтрак </a>
+                  <a href="#spag">Завтрак </a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Обед</a>
+                  <a href="#spag">Обед</a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Ужин</a>
+                  <a href="#spag">Ужин</a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Десерт</a>
+                  <a href="#spag">Десерт</a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Напитки</a>
+                  <a href="#spag">Напитки</a>
                 </li>
               </ul>
             </div>
@@ -1417,16 +1418,16 @@
               <p class="footer__nav-title">Соц.сети</p>
               <ul class="footer__nav-list">
                 <li class="footer__nav-item">
-                  <a href="#">Instagram</a>
+                  <a href="https://vk.com/acoustich">VK</a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Twitter</a>
+                  <a href="https://steamcommunity.com/id/korovka64/">Steam</a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Youtube </a>
+                  <a href="https://www.youtube.com/watch?v=Y0kdo9QWpKU">Youtube </a>
                 </li>
                 <li class="footer__nav-item">
-                  <a href="#">Facebook</a>
+                  <a href="https://www.youtube.com/watch?v=YR16dpgtE_0">Нажми</a>
                 </li>
               </ul>
             </div>
@@ -1446,16 +1447,16 @@
 
     <div class="modal__container">
       <div class="modal__block">
-        <p class="modal__title">Введите ваш номер</p>
+        <p class="modal__title">Подпишитесь на нас</p>
         <input
           type="text"
           name="text"
           class="modal__input"
-          placeholder="Enter your phone"
+          placeholder="Введите вашу почту"
         />
         <div class="modal__btn">
           <div class="loader"></div>
-          <p>Отправить сообщение</p>
+          <p>Подписаться на рассылку</p>
         </div>
       </div>
     </div>

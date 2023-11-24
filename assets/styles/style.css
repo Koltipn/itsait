@@ -82,6 +82,7 @@ header {
   font-weight: 300;
   line-height: 24px; /* 150% */
   margin-top: 37px;
+  margin-bottom: 80px;
   width: 424px;
 }
 
@@ -90,6 +91,7 @@ header {
 }
 
 .first-page__btn {
+  text-decoration: none;
   color: #fff;
 
   font-family: Inter;
@@ -431,7 +433,8 @@ header {
   margin-top: 15px;
 }
 
-.about__btn {
+.about__btn a {
+  text-decoration: none;
   color: #fff;
   font-size: 20px;
   font-style: normal;
@@ -449,6 +452,7 @@ header {
 }
 
 .com__container {
+  text-decoration: none;
   margin: 0 auto;
   max-width: var(--max-site-width);
   margin-top: 200px;
@@ -471,15 +475,15 @@ header {
 
 .com__overflow {
   display: flex;
-  width: 400%;
+  width: 300%;
   left: 0;
   transition-duration: 0.3s;
   position: relative;
 }
 
 .com__items-container {
-  /* flex: 1; */
-  width: 25%;
+  flex: 1;
+  /* width: 33.333%; */
   display: flex;
   gap: 90px;
   flex-wrap: wrap;

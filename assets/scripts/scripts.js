@@ -14,7 +14,7 @@ function sliderHandler() {
   console.log(buttonsNextArray);
   buttonsNextArray.forEach((el, index) => {
     el.addEventListener("click", () => {
-      if (counter !== 3) {
+      if (counter !== 2) {
         counter++;
         changeLineSegment(counter);
 
