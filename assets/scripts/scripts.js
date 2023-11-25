@@ -68,6 +68,44 @@ function sendData() {
   });
 }
 
+function smoothScroll(target) {
+  document.querySelector(target).scrollIntoView({
+    behavior: 'smooth',
+  });
+}
+
+// Функция для анимации появления элементов при прокрутке 
+function appearOnScroll() {
+  const elements = document.querySelectorAll('.hidden');
+
+  elements.forEach((element) => {
+    // Проверка, виден ли элемент в текущем видимом окне 
+    const rect = element.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const isVisible = rect.top <= windowHeight - 100;
+
+    if (isVisible) {
+      // Если элемент виден, добавляем класс 'fade-in' 
+      element.classList.add('fade-in');
+    }
+  });
+}
+
+// Плавная прокрутка для ссылок 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    smoothScroll(this.getAttribute('href'));
+  });
+});
+
+// Слушатель событий для прокрутки 
+window.addEventListener('scroll', appearOnScroll);
+
+// Вызов проверки видимости элементов при загрузке страницы 
+appearOnScroll();
+
 toggleWindow();
 
 sliderHandler();
