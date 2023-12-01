@@ -34,10 +34,13 @@
         <a href="#about">О нас</a>
       </li>
     </ul>
-    <div class="header__buttons-wrap">
+    <div class="header__buttons-wrap ">
       <img src="./assets/img/glass.svg" alt="" />
-      <img src="./assets/img/human.svg" alt="" />
     </div>
+    <div class="header__buttons-wrap2 btn-modal">
+      <img src="./assets/img/human.svg" style=" cursor: pointer;" alt="" />
+    </div>
+
   </header>
   <main>
     <div class="first-page__container hidden">
@@ -291,17 +294,20 @@
           <img src="./assets/img/bread.png" alt="" />
           <p class="about__title" id="about">О нас</p>
           <p class="about__desc">
-            Наши рецепты — это не просто блюда, <br> это — наше сердце и душа. 
+            Наши рецепты — это не просто блюда, <br> это — наше сердце и душа.
             Они отражают наше стремление предоставить вам вкусные, простые и
             разнообразные обеды.
           </p>
           <div class="about__btn btn-modal">
             <p>Связаться с нами</p>
           </div>
+
         </div>
       </div>
     </div>
     <div class="com__container hidden">
+      <script type="text/javascript" charset="utf-8" async
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A884156ca5b793bbb63037b4e4b9fcca7f693dc6cedfcd111f1ad2a2f4abe7f80&amp;width=1240&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
       <p class="com__title"></p>
       <div class="com__items-wrap">
         <div class="com__overflow">
@@ -924,13 +930,18 @@
 
   <div class="modal__container">
     <div class="modal__block">
-      <p class="modal__title">Подпишитесь на нас</p>
-      <input type="text" name="text" class="modal__input" placeholder="Введите вашу почту" />
+      <p class="modal__title">Введите ваши данные</p>
+      <input type="text" name="text" class="modal__input modal__number" placeholder="89231161541" />
+      <input type="text" name="text" class="modal__input modal__email" placeholder="Email" />
+      <input type="password" name="text" class="modal__input modal__password" placeholder="Пароль(больше 6 символов)" />
       <div class="modal__btn">
         <div class="loader"></div>
-        <p>Подписаться на рассылку</p>
+        <p>Отправить сообщение</p>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 </body>
 <script src="./assets/scripts/scripts.js"></script>

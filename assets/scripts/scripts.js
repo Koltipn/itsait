@@ -54,17 +54,40 @@ function sendData() {
   const btn = document.querySelector(".modal__btn");
   const messageWindow = document.querySelector(".modal__container");
 
-  btn.addEventListener("click", () => {
-    btn.classList.add("sending");
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then((response) => response.json())
-      .then((json) => {
-        alert("Р—Р°СЏРІРєР° РѕС‚РїСЂР°РІР»РµРЅР°");
-        btn.classList.remove("sending");
-        messageWindow.classList.remove("active");
+  const email = document.querySelector(".modal__email");
+  const password = document.querySelector(".modal__password");
+  const number = document.querySelector(".modal__number");
+  const problems = [];
+  function vaidate() {
+    const EMAIL_REGEXP =
+      /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
-        console.log(json);
-      });
+    const NUMBER_REGEXP =
+      /^(8|\+7)?[\s\-]?\(?[4-9]\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+    if (!EMAIL_REGEXP.test(email.value)) problems.push("email");
+
+    if (!NUMBER_REGEXP.test(number.value)) problems.push("number");
+
+    if (password.value.length < 6) problems.push("password");
+  }
+
+  btn.addEventListener("click", () => {
+    vaidate();
+    if (problems.length === 0) {
+      btn.classList.add("sending");
+      fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((response) => response.json())
+        .then((json) => {
+          alert("Р—Р°СЏРІРєР° РѕС‚РїСЂР°РІР»РµРЅР°");
+          btn.classList.remove("sending");
+          messageWindow.classList.remove("active");
+
+          console.log(json);
+        });
+    } else {
+      alert(`РћС€РёР±РєРё РІ РїРѕР»СЏС… - ${problems.join(" , ")}`);
+    }
+    problems.length = 0;
   });
 }
 
@@ -74,25 +97,25 @@ function smoothScroll(target) {
   });
 }
 
-// Функция для анимации появления элементов при прокрутке 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 function appearOnScroll() {
   const elements = document.querySelectorAll('.hidden');
 
   elements.forEach((element) => {
-    // Проверка, виден ли элемент в текущем видимом окне 
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 
     const rect = element.getBoundingClientRect();
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
     const isVisible = rect.top <= windowHeight - 100;
 
     if (isVisible) {
-      // Если элемент виден, добавляем класс 'fade-in' 
+      // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 'fade-in' 
       element.classList.add('fade-in');
     }
   });
 }
 
-// Плавная прокрутка для ссылок 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -100,10 +123,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Слушатель событий для прокрутки 
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 window.addEventListener('scroll', appearOnScroll);
 
-// Вызов проверки видимости элементов при загрузке страницы 
+// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 appearOnScroll();
 
 toggleWindow();
